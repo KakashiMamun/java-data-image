@@ -13,7 +13,7 @@ Add the following dependency to your POM file:
 The sample code below shows how to convert an image to a data frame (Please refers to this [link](https://github.com/chen0040/java-data-frame) on how to use a data frame):
 
 ```java
-BufferedImage img= ImageIO.read(FileUtils.getResource("1.jpg"));
+BufferedImage img= ImageIO.read(new FileInputStream("1.jpg"));
 
 DataFrame batch = ImageDataFrameFactory.dataFrame(img);
 
