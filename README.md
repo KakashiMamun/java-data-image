@@ -8,6 +8,14 @@ Package provides java implementation of some common api of image manipulation in
 
 Add the following dependency to your POM file:
 
+```xml
+<dependency>
+  <groupId>com.github.chen0040</groupId>
+  <artifactId>java-data-image</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
+
 # Usage
 
 The sample code below shows how to convert an image to a data frame (Please refers to this [link](https://github.com/chen0040/java-data-frame) on how to use a data frame):
