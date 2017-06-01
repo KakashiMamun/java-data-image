@@ -49,8 +49,10 @@ public class ImageDataFrameFactory {
         return gray;
     }
 
-    public static DataRow getPixelTuple(DataFrame context, int rgb){
-        DataRow row = context.newRow();
+    public static DataRow getPixelTuple(int x, int y, int rgb){
+        ImageDataRow row = new ImageDataRow();
+        row.setPixelX(x);
+        row.setPixelY(y);
 
         double r = get_r(rgb);
         double g = get_g(rgb);
@@ -74,7 +76,7 @@ public class ImageDataFrameFactory {
             int y = rand.nextInt(img.getHeight());
 
             int rgb = img.getRGB(x, y);
-            DataRow row = getPixelTuple(batch, rgb);
+            DataRow row = getPixelTuple(x, y, rgb);
             batch.addRow(row);
         }
         batch.lock();
