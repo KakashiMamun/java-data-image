@@ -27,5 +27,11 @@ public class ImageDataFrameFactoryUnitTest {
 
       DataFrame clone = batch.makeCopy();
       assertTrue(clone.row(0) instanceof ImageDataRow);
+
+      ImageDataRow row = new ImageDataRow();
+      row.copy(clone.row(2));
+      ImageDataRow original = (ImageDataRow)clone.row(2);
+      assertEquals(row.getPixelX(), original.getPixelX());
+      assertEquals(row.getPixelY(), original.getPixelY());
    }
 }
