@@ -24,5 +24,8 @@ public class ImageDataFrameFactoryUnitTest {
       DataFrame batch = ImageDataFrameFactory.dataFrame(img);
 
       System.out.println(batch.head(10));
+
+      DataFrame clone = batch.makeCopy();
+      assertTrue(clone.row(0) instanceof ImageDataRow);
    }
 }
